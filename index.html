@@ -1,0 +1,1112 @@
+html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GTA 6 Curiosidades</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f2f2f2;
+            color: #222;
+        }
+
+        /* ACESSIBILIDADE */
+
+        .skip-link {
+            position: absolute;
+            left: 10px;
+            top: -50px;
+            background: #000;
+            color: white;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+        }
+
+        button,
+        a,
+        input,
+        textarea {
+            font-size: 16px;
+        }
+
+        button:focus,
+        a:focus,
+        input:focus,
+        textarea:focus {
+            outline: 3px solid #ffcc00;
+            outline-offset: 3px;
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px;
+        }
+
+        .topo {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* BOTÕES DE ACESSIBILIDADE */
+
+        .acessibilidade {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .acessibilidade button {
+            padding: 8px 12px;
+            margin: 3px;
+
+            border: none;
+            border-radius: 4px;
+
+            cursor: pointer;
+        }
+
+        /* BANNER */
+
+        .hero {
+            min-height: 420px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.55),
+                    rgba(0,0,0,.65)
+                ),
+                url("assets/gta6.jpg");
+
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 30px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 20px;
+
+            background: #ffcc00;
+            color: #111;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            border-radius: 5px;
+        }
+
+        .botao:hover {
+            background: white;
+        }
+
+        /* CONTEÚDO */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        section h2 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+            border-left: 5px solid #ffcc00;
+
+            padding-left: 10px;
+        }
+
+        /* CARTÕES */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 25px;
+        }
+
+        .card,
+        .personagem,
+        .lista,
+        form {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,.12);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .numero {
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #b38d00;
+        }
+
+        /* PERSONAGENS */
+
+        .personagens {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        /* LISTA */
+
+        .lista li {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* DOWNLOAD PDF */
+
+        .download-box {
+            background: #fff;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,.12);
+
+            text-align: center;
+        }
+
+        .download-box p {
+            margin-bottom: 15px;
+        }
+
+        .botao-download {
+
+            display: inline-block;
+
+            background: #111;
+
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .botao-download:hover {
+
+            background: #ffcc00;
+
+            color: #111;
+        }
+
+        /* VÍDEO */
+
+        .video-container {
+
+            position: relative;
+
+            width: 100%;
+
+            padding-bottom: 56.25%;
+
+            height: 0;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+        }
+
+        .video-container iframe {
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+        }
+
+        /* FORMULÁRIO */
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #aaa;
+
+            border-radius: 4px;
+        }
+
+        textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        .enviar {
+
+            background: #111;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .enviar:hover {
+
+            background: #ffcc00;
+
+            color: #111;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer a {
+            color: #ffcc00;
+        }
+
+        /* ALTO CONTRASTE */
+
+        .alto-contraste {
+
+            background: black;
+
+            color: white;
+        }
+
+        .alto-contraste header,
+        .alto-contraste footer {
+
+            background: black;
+
+            border-bottom: 2px solid white;
+        }
+
+        .alto-contraste
+        .card,
+
+        .alto-contraste
+        .personagem,
+
+        .alto-contraste
+        .lista,
+
+        .alto-contraste
+        form,
+
+        .alto-contraste
+        .download-box {
+
+            background: #111;
+
+            color: white;
+
+            border: 1px solid white;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media(max-width: 800px) {
+
+            .topo {
+
+                flex-direction: column;
+            }
+
+            .hero h1 {
+
+                font-size: 38px;
+            }
+
+            .cards,
+            .personagens {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 500px) {
+
+            .hero {
+
+                min-height: 350px;
+            }
+
+            .hero h1 {
+
+                font-size: 30px;
+            }
+
+            .hero p {
+
+                font-size: 17px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- LINK PARA ACESSIBILIDADE -->
+
+    <a href="#conteudo" class="skip-link">
+        Ir diretamente para o conteúdo
+    </a>
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="topo">
+
+            <div class="logo">
+                GTA 6 Curiosidades
+            </div>
+
+            <nav aria-label="Menu principal">
+
+                <ul>
+
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#curiosidades">
+                            Curiosidades
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#personagens">
+                            Personagens
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#download">
+                            PDF
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#video">
+                            Vídeo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contacto">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ACESSIBILIDADE -->
+
+    <div class="acessibilidade"
+         aria-label="Ferramentas de acessibilidade">
+
+        <button onclick="aumentarTexto()">
+            Aumentar texto
+        </button>
+
+        <button onclick="diminuirTexto()">
+            Diminuir texto
+        </button>
+
+        <button onclick="contraste()">
+            Alto contraste
+        </button>
+
+    </div>
+
+
+    <!-- BANNER -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>
+                Grand Theft Auto VI
+            </h1>
+
+            <p>
+                Curiosidades, personagens e informações
+                sobre um dos jogos mais esperados.
+            </p>
+
+            <a href="#curiosidades"
+               class="botao">
+
+                Ver curiosidades
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO -->
+
+    <main id="conteudo">
+
+
+        <!-- SOBRE -->
+
+        <section aria-labelledby="sobre">
+
+            <h2 id="sobre">
+                Sobre o GTA 6
+            </h2>
+
+            <p>
+                Grand Theft Auto VI é o próximo jogo
+                da série Grand Theft Auto.
+            </p>
+
+            <br>
+
+            <p>
+                A história apresenta o estado fictício
+                de Leonida e o retorno de Vice City.
+            </p>
+
+        </section>
+
+
+        <!-- CURIOSIDADES -->
+
+        <section id="curiosidades"
+                 aria-labelledby="titulo-curiosidades">
+
+            <h2 id="titulo-curiosidades">
+                Algumas curiosidades
+            </h2>
+
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        01
+                    </div>
+
+                    <h3>
+                        Vice City está de volta
+                    </h3>
+
+                    <p>
+                        O jogo apresenta novamente
+                        Vice City numa versão moderna.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        02
+                    </div>
+
+                    <h3>
+                        Dois protagonistas
+                    </h3>
+
+                    <p>
+                        A história acompanha
+                        Jason Duval e Lucia Caminos.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        03
+                    </div>
+
+                    <h3>
+                        Estado de Leonida
+                    </h3>
+
+                    <p>
+                        A aventura acontece em diferentes
+                        regiões do estado fictício de Leonida.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        04
+                    </div>
+
+                    <h3>
+                        Lucia
+                    </h3>
+
+                    <p>
+                        Lucia começa a história depois
+                        de passar pela prisão.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        05
+                    </div>
+
+                    <h3>
+                        Jason e Lucia
+                    </h3>
+
+                    <p>
+                        A relação entre os dois personagens
+                        é importante para a história.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="numero">
+                        06
+                    </div>
+
+                    <h3>
+                        Mundo aberto
+                    </h3>
+
+                    <p>
+                        O jogo apresenta ambientes urbanos,
+                        estradas e regiões costeiras.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAGENS -->
+
+        <section id="personagens"
+                 aria-labelledby="titulo-personagens">
+
+            <h2 id="titulo-personagens">
+                Personagens principais
+            </h2>
+
+
+            <div class="personagens">
+
+
+                <article class="personagem">
+
+                    <h3>
+                        Jason Duval
+                    </h3>
+
+                    <br>
+
+                    <p>
+                        Jason cresceu rodeado por criminosos
+                        e acaba envolvido nos acontecimentos
+                        ao lado de Lucia.
+                    </p>
+
+                </article>
+
+
+                <article class="personagem">
+
+                    <h3>
+                        Lucia Caminos
+                    </h3>
+
+                    <br>
+
+                    <p>
+                        Lucia saiu da prisão determinada
+                        a mudar a sua situação e construir
+                        uma nova vida.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <section aria-labelledby="titulo-informacoes">
+
+            <h2 id="titulo-informacoes">
+                O que já sabemos
+            </h2>
+
+
+            <div class="lista">
+
+                <ul>
+
+                    <li>
+                        O jogo apresenta o estado
+                        fictício de Leonida.
+                    </li>
+
+                    <li>
+                        Vice City é uma das principais regiões.
+                    </li>
+
+                    <li>
+                        Jason Duval e Lucia Caminos
+                        são os protagonistas.
+                    </li>
+
+                    <li>
+                        A história envolve crime,
+                        parceria e sobrevivência.
+                    </li>
+
+                    <li>
+                        O jogo apresenta diferentes
+                        ambientes e regiões.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOWNLOAD PDF -->
+
+        <section id="download"
+                 aria-labelledby="titulo-download">
+
+            <h2 id="titulo-download">
+                Informação extra
+            </h2>
+
+
+            <div class="download-box">
+
+                <h3>
+                    Quer saber mais sobre GTA 6?
+                </h3>
+
+                <br>
+
+                <p>
+                    Preparamos um ficheiro PDF com
+                    informações extras sobre o jogo,
+                    personagens, Vice City, Leonida
+                    e outras curiosidades.
+                </p>
+
+
+                <a href="assets/informacoes-gta6.pdf"
+                   download="informacoes-gta6.pdf"
+                   class="botao-download">
+
+                    📄 Baixar informações extras
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- VÍDEO -->
+
+        <section id="video"
+                 aria-labelledby="titulo-video">
+
+            <h2 id="titulo-video">
+                Trailer
+            </h2>
+
+            <p>
+                Assista ao trailer para conhecer
+                um pouco mais sobre o universo do jogo.
+            </p>
+
+            <br>
+
+
+            <div class="video-container">
+
+                <iframe
+                    src="https://www.youtube.com/embed/QdBZY2fkU-0"
+                    title="Trailer de Grand Theft Auto VI"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÁUDIO -->
+
+        <section id="audio"
+                 aria-labelledby="titulo-audio">
+
+            <h2 id="titulo-audio">
+                Áudio
+            </h2>
+
+            <p>
+                Ouça o áudio disponibilizado
+                para o projecto.
+            </p>
+
+            <br>
+
+            <audio controls
+                   aria-label="Áudio do projeto">
+
+                <source
+                    src="assets/GTA 6  audio.mp3"
+                    type="audio/mpeg">
+
+                O seu navegador não suporta áudio.
+
+            </audio>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+
+        <section id="contacto"
+                 aria-labelledby="titulo-contacto">
+
+            <h2 id="titulo-contacto">
+                Deixe a sua opinião
+            </h2>
+
+            <p>
+                Qual é a sua maior expectativa para GTA 6?
+            </p>
+
+            <br>
+
+
+            <form id="formulario">
+
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="opiniao">
+                        Sua opinião
+                    </label>
+
+                    <textarea
+                        id="opiniao"
+                        name="opiniao"
+                        required>
+                    </textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="enviar">
+
+                    Enviar opinião
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 GTA 6 Curiosidades
+        </p>
+
+        <p>
+            Projeto académico — DPWHTML
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let tamanhoAtual = 16;
+
+
+        function aplicarTamanho() {
+
+            document.body.style.fontSize =
+                tamanhoAtual + "px";
+
+        }
+
+
+        function aumentarTexto() {
+
+            if (tamanhoAtual < 24) {
+
+                tamanhoAtual += 2;
+
+                aplicarTamanho();
+
+            }
+
+        }
+
+
+        function diminuirTexto() {
+
+            if (tamanhoAtual > 12) {
+
+                tamanhoAtual -= 2;
+
+                aplicarTamanho();
+
+            }
+
+        }
+
+
+        function contraste() {
+
+            document.body.classList.toggle(
+                "alto-contraste"
+            );
+
+        }
+
+
+        document
+            .getElementById("formulario")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Obrigado pela sua opinião!"
+                );
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+</html>
+```
